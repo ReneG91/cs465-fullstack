@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Website template by freewebsitetemplates.com -->
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -15,27 +14,13 @@
 				</div>
 				<div id="navigation">
 					<ul>
-						<li class="selected">
-							<a href="/">Home</a>
-						</li>
-						<li>
-							<a href="/travel">Travel</a>
-						</li>
-						<li>
-							<a href="/rooms">Rooms</a>
-						</li>
-						<li>
-							<a href="/meals">Meals</a>
-						</li>
-						<li>
-							<a href="/news">News</a>
-						</li>
-						<li>
-							<a href="/about">About</a>
-						</li>
-						<li>
-							<a href="/contact">Contact</a>
-						</li>
+						<li class="selected"><a href="/">Home</a></li>
+						<li><a href="/travel">Travel</a></li>
+						<li><a href="/rooms">Rooms</a></li>
+						<li><a href="/meals">Meals</a></li>
+						<li><a href="/news">News</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/contact">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -44,9 +29,21 @@
 					<img src="/images/sea-sound.jpg" alt="Img">
 					<h1>Enjoy the Summer with Us!</h1>
 					<p>
-						This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forums/">Forum</a>.
+						This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free.
 					</p>
 				</div>
+
+				<div style="padding:20px; clear:both;">
+					{{#each trips}}
+						<div style="margin-bottom:20px; padding:15px; background:#ffffff; border:1px solid #cccccc;">
+							<h2>{{this.name}}</h2>
+							<p>{{this.length}}</p>
+							<p>{{this.price}}</p>
+							<p>{{this.description}}</p>
+						</div>
+					{{/each}}
+				</div>
+
 				<div id="main">
 					<div class="box">
 						<div>
@@ -56,16 +53,12 @@
 									<li>
 										<h4><a href="/news">2023 Best Beaches Contest Winners</a></h4>
 										<span>April 02, 2023</span>
-										<p>
-											Integer magna leo, posuere et dignissim vitae, porttitor at odio. Pellentesque a metus nec magna placerat volutpat. Nunc nisi mi, elementum sit amet...
-										</p>
+										<p>Integer magna leo, posuere et dignissim vitae, porttitor at odio.</p>
 									</li>
 									<li>
 										<h4><a href="/news">Top 10 Diving Spots</a></h4>
 										<span>May 29, 2023</span>
-										<p>
-											Maecenas scelerisque odio quis arcu fringilla malesuada. Nulla facilisi. In libero nulla, fermentum ut pretium ac, pharetra et eros...
-										</p>
+										<p>Maecenas scelerisque odio quis arcu fringilla malesuada.</p>
 									</li>
 								</ul>
 							</div>
@@ -76,12 +69,13 @@
 							<div>
 								<h3>Testimonials</h3>
 								<p>
-									“In hac habitasse platea dictumst. Integer purus justo, egestas eu consectetur eu, cursus in tortor. Quisque nec nunc ac mi ultrices iaculis. Aenean quis elit mauris, nec vestibulum lorem.” <span>- <a href="index.html">Juan De La Cruz</a></span>
+									“In hac habitasse platea dictumst.” <span>- <a href="/">Juan De La Cruz</a></span>
 								</p>
 							</div>
 						</div>
 					</div>
 				</div>
+
 				<div id="sidebar">
 					<div class="section">
 						<a href="/rooms"><img src="/images/rooms.png" alt="Img"></a>
@@ -98,35 +92,16 @@
 		<div id="footer">
 			<div>
 				<ul class="navigation">
-					<li class="active">
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/travel">Travel</a>
-					</li>
-					<li>
-						<a href="/rooms">Rooms</a>
-					</li>
-					<li>
-						<a href="/meals">Meals</a>
-					</li>
-					<li>
-						<a href="/news">News</a>
-					</li>
-					<li>
-						<a href="/about">About</a>
-					</li>
-					<li>
-						<a href="/contact">Contact</a>
-					</li>
+					<li class="active"><a href="/">Home</a></li>
+					<li><a href="/travel">Travel</a></li>
+					<li><a href="/rooms">Rooms</a></li>
+					<li><a href="/meals">Meals</a></li>
+					<li><a href="/news">News</a></li>
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
 				</ul>
-				<div id="connect">
-					<a href="http://pinterest.com/fwtemplates/" target="_blank" class="pinterest"></a> <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a> <a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
-				</div>
 			</div>
-			<p>
-				© 2023 by Travlr Getaways. All Rights Reserved
-			</p>
+			<p>© 2023 by Travlr Getaways. All Rights Reserved</p>
 		</div>
 	</div>
 </body>
