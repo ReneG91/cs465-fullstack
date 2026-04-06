@@ -1,10 +1,19 @@
-const trips = require('../data/trips.json');
+const Trip = require('../models/trips');
 
-module.exports.home = function (req, res) {
-  res.render('traveler', {
-    title: 'Travlr Getaways',
-    trips: trips
-  });
+module.exports.home = async function (req, res) {
+  try {
+    const trips = await Trip.find({});
+    res.render('traveler', {
+      title: 'Travlr Getaways',
+      trips: trips
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).render('error', {
+      message: err.message,
+      error: err
+    });
+  }
 };
 
 module.exports.about = function (req, res) {
