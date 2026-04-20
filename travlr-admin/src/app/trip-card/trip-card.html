@@ -1,0 +1,10 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5>{{ trip.name }}</h5>
+    <p>{{ trip.description }}</p>
+    <p><strong>{{ trip.price }}</strong></p>
+    <p>{{ trip.length }}</p>
+    <button (click)="editTrip()" class="btn btn-warning btn-sm">Edit</button>
+<button (click)="deleteTrip()" class="btn btn-danger btn-sm">Delete</button>
+  </div>
+</div>
