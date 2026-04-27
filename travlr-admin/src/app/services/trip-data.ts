@@ -11,6 +11,14 @@ export class TripDataService {
 
   constructor(private http: HttpClient) { }
 
+  private getAuthHeaders() {
+    return {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('travlr-token')}`
+      }
+    };
+  }
+
   getTrips(): Observable<any> {
     return this.http.get(`${this.apiBaseUrl}/trips`);
   }
@@ -20,14 +28,14 @@ export class TripDataService {
   }
 
   addTrip(trip: any): Observable<any> {
-    return this.http.post(`${this.apiBaseUrl}/trips`, trip);
+    return this.http.post(`${this.apiBaseUrl}/trips`, trip, this.getAuthHeaders());
   }
 
   updateTrip(id: string, trip: any): Observable<any> {
-    return this.http.put(`${this.apiBaseUrl}/trips/${id}`, trip);
+    return this.http.put(`${this.apiBaseUrl}/trips/${id}`, trip, this.getAuthHeaders());
   }
 
   deleteTrip(id: string): Observable<any> {
-    return this.http.delete(`${this.apiBaseUrl}/trips/${id}`);
+    return this.http.delete(`${this.apiBaseUrl}/trips/${id}`, this.getAuthHeaders());
   }
 }

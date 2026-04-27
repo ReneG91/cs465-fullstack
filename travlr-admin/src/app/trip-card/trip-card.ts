@@ -19,13 +19,25 @@ export class TripCardComponent {
   ) {}
 
   editTrip() {
-    this.router.navigate(['/edit', this.trip._id]);
+  if (!localStorage.getItem('travlr-token')) {
+    alert('You must log in first.');
+    window.location.href = '/login';
+    return;
   }
 
+  this.router.navigate(['/edit', this.trip._id]);
+}
+
   deleteTrip() {
-    this.tripService.deleteTrip(this.trip._id).subscribe(() => {
-      alert('Deleted');
-      window.location.reload();
-    });
+  if (!localStorage.getItem('travlr-token')) {
+    alert('You must log in first.');
+    window.location.href = '/login';
+    return;
   }
+
+  this.tripService.deleteTrip(this.trip._id).subscribe(() => {
+    alert('Deleted');
+    window.location.reload();
+  });
+}
 }

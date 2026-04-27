@@ -38,22 +38,28 @@ export class TripFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.isEdit) {
-      this.tripService.updateTrip(this.trip._id, this.trip).subscribe(() => {
-        alert('Trip updated');
-        window.location.href = '/';
-      });
-    } else {
-      this.tripService.addTrip(this.trip).subscribe(() => {
-        alert('Trip added');
-        this.trip = {
-          name: '',
-          length: '',
-          price: '',
-          description: ''
-        };
-        window.location.reload();
-      });
-    }
+  if (!localStorage.getItem('travlr-token')) {
+    alert('You must log in first.');
+    window.location.href = '/login';
+    return;
   }
+
+  if (this.isEdit) {
+    this.tripService.updateTrip(this.trip._id, this.trip).subscribe(() => {
+      alert('Trip updated');
+      window.location.href = '/';
+    });
+  } else {
+    this.tripService.addTrip(this.trip).subscribe(() => {
+      alert('Trip added');
+      this.trip = {
+        name: '',
+        length: '',
+        price: '',
+        description: ''
+      };
+      window.location.reload();
+    });
+  }
+}
 }

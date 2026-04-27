@@ -17,3 +17,4 @@ mongoose.connection.on('disconnected', () => {
 });
 
 require('../models/trips');
+require('../models/users');
